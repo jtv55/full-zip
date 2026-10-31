@@ -130,10 +130,45 @@ add("Railroaders Memorial Museum", "Railroads", "Heritage railroad museum", "Cor
 import os
 IMAGES = json.load(open("images.json")) if os.path.exists("images.json") else {}
 
+from urllib.parse import urlparse
+
+for i, h in enumerate(H, 1):
+    h["image"] = IMAGES.get(str(i))
+    h["_handle"] = urlparse(h["url"]).path.rstrip("/").split("/")[-1]
+    h["_domain"] = ".".join(urlparse(h["url"]).netloc.split(".")[-2:])
+
+if os.path.exists("harvested.json"):
+    have = {(h["_domain"], h["_handle"]) for h in H}
+    for h in json.load(open("harvested.json", encoding="utf-8")):
+        if (h["domain"], h["handle"]) in have:
+            continue
+        have.add((h["domain"], h["handle"]))
+        h["_handle"], h["_domain"] = h.pop("handle"), h.pop("domain")
+        H.append(h)
+
+import re
+
+
+def short_sizes(s):
+    if not s:
+        return s
+    t = s
+    for a, b in [(r"triple extra[- ]large|xxx[- ]large|3x[- ]large", "3XL"), (r"double extra[- ]large|xx[- ]large|2x[- ]large", "2XL"),
+                 (r"extra[- ]small|x[- ]small", "XS"), (r"extra[- ]large|x[- ]large", "XL"), (r"small", "S"), (r"medium", "M"), (r"large", "L")]:
+        t = re.sub(a, b, t, flags=re.I)
+    return t.upper().replace(" ", "")
+
+
+WORLD_FIX = {"Outdoor gear": "Outdoors", "Aquariums": "Nature", "Science & learning": "Media", "Space": "Tech",
+             "Hot sauce": "Food & drink", "BBQ": "Food & drink", "Spirits": "Beer & spirits", "Beer": "Beer & spirits",
+             "Aviation": "Outdoors", "Creators": "Media"}
 for i, h in enumerate(H, 1):
     h["id"] = i
     h["checked"] = CHECKED
-    h["image"] = IMAGES.get(str(i))
+    h["world"] = WORLD_FIX.get(h["world"], h["world"])
+    if h.get("sizes") and len(h["sizes"]) > 9:
+        h["sizes"] = short_sizes(h["sizes"])
+    h.pop("_handle", None); h.pop("_domain", None)
 
 json.dump(H, open("data.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 print(len(H), "hoodies;", sum(1 for h in H if h["material"]), "list a material;", sum(1 for h in H if h["price"]), "list a price")
