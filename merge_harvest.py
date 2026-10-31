@@ -6,12 +6,13 @@ retailer-resold items, dedupes, and writes harvested.json for build_data.py.
 import json, re, sys
 from urllib.parse import urlparse
 
-SRC = sys.argv[1]
-DROP_VENDORS = {"Milwaukee Tool", "RevZilla", "Biketart", "Black Diamond"}
-DROP_TITLE = re.compile(r"Alpinestars|Dainese|Troy Lee|Fox Head|Since 74", re.I)
+DROP_VENDORS = {"Milwaukee Tool", "RevZilla", "Biketart", "Black Diamond", "DeWalt"}
+DROP_TITLE = re.compile(r"Alpinestars|Dainese|Troy Lee|Fox Head|Since 74|Run Top|Running|Active Hooded|Class 3|hi[- ]?vis", re.I)
 RETAILERS = {"Pilot Mall", "Aspen Ski and Board", "J&P Cycles"}
 
-raw = json.load(open(SRC, encoding="utf-8"))
+raw = []
+for path in sys.argv[1:]:
+    raw += json.load(open(path, encoding="utf-8"))
 out, seen = [], set()
 for r in raw:
     for h in r["found"]:

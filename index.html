@@ -113,6 +113,7 @@ footer p { max-width: 760px; margin: 0 0 10px; }
     <button class="chip" id="specsOnly" aria-pressed="false">Material listed</button>
     <button class="chip" id="weightOnly" aria-pressed="false">Weight listed</button>
     <button class="chip" id="usa" aria-pressed="false">Made in USA</button>
+    <button class="chip" id="fullOnly" aria-pressed="false">Says "full zip"</button>
     <label><span class="src">Sort</span>
       <select id="sort" aria-label="Sort">
         <option value="shuffle">Shuffle</option>
@@ -138,7 +139,7 @@ footer p { max-width: 760px; margin: 0 0 10px; }
 
 <script>
 (function () {
-  var DATA = [], state = { worlds: new Set(), specs: false, weight: false, usa: false, sort: "shuffle", pick: null };
+  var DATA = [], state = { worlds: new Set(), specs: false, weight: false, usa: false, full: false, sort: "shuffle", pick: null };
   var order = [];
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -183,6 +184,7 @@ footer p { max-width: 760px; margin: 0 0 10px; }
       if (state.specs && !h.material) return false;
       if (state.weight && !weightText(h)) return false;
       if (state.usa && !isUSA(h)) return false;
+      if (state.full && !/full/i.test(h.zip || "")) return false;
       return true;
     });
   }
@@ -299,7 +301,7 @@ footer p { max-width: 760px; margin: 0 0 10px; }
     document.getElementById("suggest").href = "https://github.com/jtv55/full-zip/issues/new?title=" + encodeURIComponent("Suggest a hoodie") + "&body=" + encodeURIComponent("Brand:\nProduct link:\nWhy it fits (not primarily a clothing brand, full zip):\n");
     document.getElementById("remove").href = "https://github.com/jtv55/full-zip/issues/new?title=" + encodeURIComponent("Removal request") + "&body=" + encodeURIComponent("Brand:\nProduct:\n");
     shuffle(); buildWorlds(); render();
-    toggle("specsOnly", "specs"); toggle("weightOnly", "weight"); toggle("usa", "usa");
+    toggle("specsOnly", "specs"); toggle("weightOnly", "weight"); toggle("usa", "usa"); toggle("fullOnly", "full");
     document.getElementById("sort").addEventListener("change", function (e) { state.sort = e.target.value; state.pick = null; render(); });
     document.getElementById("surprise").addEventListener("click", function () {
       var list = visible(); if (!list.length) return;

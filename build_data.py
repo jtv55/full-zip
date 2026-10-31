@@ -159,7 +159,7 @@ def short_sizes(s):
     return t.upper().replace(" ", "")
 
 
-WORLD_FIX = {"Outdoor gear": "Outdoors", "Aquariums": "Nature", "Science & learning": "Media", "Space": "Tech",
+WORLD_FIX = {"Auto": "Cars & parts", "Auto parts": "Cars & parts", "Outdoor gear": "Outdoors", "Aquariums": "Nature", "Science & learning": "Media", "Space": "Tech",
              "Hot sauce": "Food & drink", "BBQ": "Food & drink", "Spirits": "Beer & spirits", "Beer": "Beer & spirits",
              "Aviation": "Outdoors", "Creators": "Media"}
 for i, h in enumerate(H, 1):
