@@ -168,6 +168,13 @@ for i, h in enumerate(H, 1):
     h["world"] = WORLD_FIX.get(h["world"], h["world"])
     if h.get("sizes") and len(h["sizes"]) > 9:
         h["sizes"] = short_sizes(h["sizes"])
+    if h.get("sizes"):
+        h["sizes"] = (h["sizes"].replace("X-Sl", "XS").replace("X-S", "XS").replace("3XLG", "3XL").replace("XLG", "XL")
+                      .replace("XXXL", "3XL").replace("XXL", "2XL"))
+        if h["sizes"].endswith("X"):
+            h["sizes"] += "L"
+        if h["sizes"] == "S-1":
+            h["sizes"] = None
     h.pop("_handle", None); h.pop("_domain", None)
 
 json.dump(H, open("data.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
