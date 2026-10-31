@@ -20,7 +20,8 @@
   "notes": "Inspired by coffee cherries and green-coffee burlap bags. Designed by K North Studios, printed by Ambient Inks.",
   "source": "vendor",
   "id": 1,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0339/5565/files/BURLAPBAG_ZIPUPHOODIE_MODEL1.jpg?v=1698174174"
  },
  {
   "vendor": "Heartbeat Hot Sauce Co.",
@@ -43,7 +44,8 @@
   "notes": "Screen printed on a zip-up fleece hoodie.",
   "source": "vendor",
   "id": 2,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0184/7413/9757/products/HB_PLS_Hoodie_Front.jpg?v=1652387941"
  },
  {
   "vendor": "Forty Weight Coffee Roasters",
@@ -66,7 +68,8 @@
   "notes": "Made on an Alternative Apparel blank. Artwork by Jeremiah Wolfe Clifford of Working Class Tattoo.",
   "source": "vendor",
   "id": 3,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://static1.squarespace.com/static/537a4d08e4b02c5d20538431/5384c6c9e4b0f219e1fa1955/59f681496926700aba35168e/1587138690433/?format=1500w"
  },
  {
   "vendor": "Chud's BBQ",
@@ -89,7 +92,8 @@
   "notes": "Merch from a bearded pit builder; warm zip-up with a hood.",
   "source": "vendor",
   "id": 4,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": null
  },
  {
   "vendor": "Mishimoto",
@@ -112,7 +116,8 @@
   "notes": "Embroidered M logo on the chest, silkscreen logo down the arm. 1x1 ribbed cuffs and waistband.",
   "source": "vendor",
   "id": 5,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://www.mishimoto.com/media/catalog/product/m/m/mmapl-zhood-embrbk_1_3ctagh5dt8r8vjpq.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=400&width=400&canvas=400:400"
  },
  {
   "vendor": "Leatherman",
@@ -135,7 +140,8 @@
   "notes": "Throwback logo styling.",
   "source": "vendor",
   "id": 6,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0627/4986/8125/files/vintage_zip_hoodie_20260402201619.jpg?v=1777550979"
  },
  {
   "vendor": "Zero Tolerance Knives",
@@ -158,7 +164,8 @@
   "notes": "ZT logo on the front. ZT is a division of Kai USA.",
   "source": "retailer",
   "id": 7,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://mygoodknife.com/3886-large_default/t-shirt-zero-tolerance-zip-up-hoodie-gray-zt18xl-.jpg"
  },
  {
   "vendor": "Technoblade (Mr. Technodad)",
@@ -181,7 +188,8 @@
   "notes": "Embroidered and screen-printed left chest, printed right sleeve, custom woven hem tag.",
   "source": "vendor",
   "id": 8,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0595/4840/1869/files/MRTD-ONE-OF-US-ZIP-UP-HOODIE.jpg?v=1722889544"
  },
  {
   "vendor": "Stone Creek Coffee",
@@ -204,7 +212,8 @@
   "notes": "Artwork from the roaster's coffee labels (Voyager, Ring of Fire, Green Dragon and others). Certified B Corp.",
   "source": "vendor",
   "id": 9,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0663/3298/3452/files/Screen_Shot_2025-03-21_at_1.18.23_PM.png?v=1742581612"
  },
  {
   "vendor": "Equator Coffees",
@@ -227,7 +236,8 @@
   "notes": "Collaboration with Marin County brand Katemi; back print.",
   "source": "vendor",
   "id": 10,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/2062/4231/files/Equator-in-Motion-Zip-Hoodie-B.webp?v=1766772179"
  },
  {
   "vendor": "ECM",
@@ -250,7 +260,8 @@
   "notes": "Grey, ECM logo on the left chest.",
   "source": "retailer",
   "id": 11,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0078/9502/3675/products/IMG_5793.jpg?v=1606337298"
  },
  {
   "vendor": "Boston Dynamics",
@@ -273,7 +284,8 @@
   "notes": "Rib-knit waistband and cuffs, coverstitching throughout, set-in sleeves. Price not shown on the page I read.",
   "source": "vendor",
   "id": 12,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://shop.bostondynamics.com/images/Products/S800.jpg"
  },
  {
   "vendor": "Chainlink",
@@ -296,7 +308,8 @@
   "notes": "Swag store. The price on the page is unclear, so check the store.",
   "source": "vendor",
   "id": 13,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": null
  },
  {
   "vendor": "Museum of Science, Boston",
@@ -319,7 +332,8 @@
   "notes": "Illustrated dinosaur embellishments, color Deep dive.",
   "source": "vendor",
   "id": 14,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0637/0902/0258/files/wr4748mos_1.jpg?v=1770097609"
  },
  {
   "vendor": "American Museum of Natural History",
@@ -342,7 +356,8 @@
   "notes": "Museum logo and elephant silhouettes on the front, 'New York' lettering on one sleeve.",
   "source": "vendor",
   "id": 15,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0766/4874/3124/files/deep_blue_ny_elephant_hoodie.jpg?v=1772217966"
  },
  {
   "vendor": "Natural History Museum of Los Angeles",
@@ -365,7 +380,8 @@
   "notes": "Dinosaurs on the front, footprints down the sleeve.",
   "source": "vendor",
   "id": 16,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0957/6064/6447/files/h3.png?v=1782141876"
  },
  {
   "vendor": "Skulls Unlimited",
@@ -388,7 +404,8 @@
   "notes": "Black, museum logo on the front, American-traditional Sir Indiana Bones on the back.",
   "source": "vendor",
   "id": 17,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/1467/6660/files/SUI05572-Photoroom_9f14c7e6-3a57-4bc1-a680-207b4059fdc5.jpg?v=1750776153"
  },
  {
   "vendor": "Museum of Peace & Quiet",
@@ -411,7 +428,8 @@
   "notes": "Embroidered 'Museum' graphics on the front.",
   "source": "retailer",
   "id": 18,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0408/9909/files/Museum-Zip-Up-Hoodie---Black-MOPQ-SS25-16-BLA---03-09-25---Feature--VR.jpg?v=1741801545"
  },
  {
   "vendor": "The Broad",
@@ -434,7 +452,8 @@
   "notes": "Supervsn x The Broad Juneteenth collaboration; architectural graphic across the back.",
   "source": "vendor",
   "id": 19,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0276/7604/9495/files/16441-1_452a2e94574442f7b2d96dccac3511cd_ce2b4ba4-8dc7-4d80-970c-505dc1d67cfa.jpg?v=1787270221"
  },
  {
   "vendor": "Aquarium Co-Op",
@@ -457,7 +476,8 @@
   "notes": "Mbu puffer on the back with 'Edmonds, Washington'; logo on the left chest.",
   "source": "vendor",
   "id": 20,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.shopify.com/s/files/1/0311/3149/files/classic-mbu-puffer-hoodie-6633657.jpg?v=1766094791"
  },
  {
   "vendor": "Society for Scholarly Publishing",
@@ -480,7 +500,8 @@
   "notes": "Care: machine wash warm, tumble dry medium.",
   "source": "vendor",
   "id": 21,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://ssp.org/wp-content/uploads/2026/04/7928148864776553351_2048.jpeg"
  },
  {
   "vendor": "Drennan",
@@ -503,7 +524,8 @@
   "notes": "Navy and aqua. Cuffed wrists to keep wind out.",
   "source": "retailer",
   "id": 22,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://www.anglingdirect.co.uk/media/catalog/product/cache/1a4a2600ea10a3f89257e67d78389a05/D/r/Drennan_Full_Zip_Hoody.jpg"
  },
  {
   "vendor": "Drennan",
@@ -526,7 +548,8 @@
   "notes": "In Drennan's Specialist green. Price and fabric not captured.",
   "source": "retailer",
   "id": 23,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://www.anglingdirect.co.uk/media/catalog/product/cache/1a4a2600ea10a3f89257e67d78389a05/d/r/drennan_specialist_zipped_hoodie_1.jpg"
  },
  {
   "vendor": "Black Diamond",
@@ -549,7 +572,8 @@
   "notes": "All-purpose layer for the mountain, overnights or travel.",
   "source": "retailer",
   "id": 24,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://cdn.absolute-snow.co.uk/fullsize/img_C-86893-BLK_00.jpg"
  },
  {
   "vendor": "Railroad City (Pennsylvania Railroad K4 1361)",
@@ -572,7 +596,8 @@
   "notes": "Steam locomotive branding on the left chest.",
   "source": "vendor",
   "id": 25,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://d2j6dbq0eux0bg.cloudfront.net/images/93254093/5394180729.jpg"
  },
  {
   "vendor": "Railroaders Memorial Museum",
@@ -595,6 +620,7 @@
   "notes": "Embroidered PRR keystone logo on the left chest.",
   "source": "vendor",
   "id": 26,
-  "checked": "2026-10-31"
+  "checked": "2026-10-31",
+  "image": "https://d2j6dbq0eux0bg.cloudfront.net/images/93254093/5394168198.jpg"
  }
 ]

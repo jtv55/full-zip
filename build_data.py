@@ -127,9 +127,13 @@ add("Railroaders Memorial Museum", "Railroads", "Heritage railroad museum", "Cor
     material="Mid-weight fleece (blend not listed)", zipstyle="Full-zip",
     notes="Embroidered PRR keystone logo on the left chest.")
 
+import os
+IMAGES = json.load(open("images.json")) if os.path.exists("images.json") else {}
+
 for i, h in enumerate(H, 1):
     h["id"] = i
     h["checked"] = CHECKED
+    h["image"] = IMAGES.get(str(i))
 
 json.dump(H, open("data.json", "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 print(len(H), "hoodies;", sum(1 for h in H if h["material"]), "list a material;", sum(1 for h in H if h["price"]), "list a price")

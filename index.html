@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Full Zip</title>
 <meta name="description" content="A gallery of full-zip hoodies from brands that don't make clothes: roasters, museums, tool makers, railroads and more. Specs included.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Full Zip">
+<meta property="og:description" content="Full-zip hoodies from brands that don't make clothes: roasters, museums, tool makers, railroads. Specs included.">
+<meta property="og:url" content="https://jtv55.github.io/full-zip/">
+<meta property="og:image" content="https://jtv55.github.io/full-zip/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jtv55.github.io/full-zip/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b4441f'/%3E%3Crect x='14' y='0' width='4' height='32' fill='%231d1b18' opacity='.55'/%3E%3Crect x='11' y='4' width='10' height='8' rx='2' fill='%23f6f3ee'/%3E%3C/svg%3E">
 <style>
 :root {
   --bg: #f6f3ee; --panel: #ffffff; --fg: #1d1b18; --muted: #6b655c; --line: #ddd6ca; --accent: #b4441f; --chip: #ece6da;
@@ -42,6 +52,9 @@ select, .btn { border: 1px solid var(--line); background: var(--panel); color: v
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
 .card.pick { outline: 3px solid var(--accent); }
 .tile { height: 120px; position: relative; display: flex; align-items: flex-end; justify-content: space-between; padding: 12px 14px; }
+.tile.photo { height: 230px; }
+.tile.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tile.photo .num { position: relative; background: rgba(255,255,255,0.7); color: #1d1b18; padding: 3px 7px; border-radius: 6px; opacity: 1; }
 .num { font: 600 13px/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: 0.08em; opacity: 0.75; }
 .zipper { position: absolute; left: 50%; top: 0; bottom: 0; width: 6px; transform: translateX(-50%);
   background: repeating-linear-gradient(to bottom, rgba(0,0,0,0.38) 0 4px, transparent 4px 8px); opacity: 0.55; }
@@ -98,6 +111,7 @@ footer p { max-width: 760px; margin: 0 0 10px; }
   <div class="empty" id="empty" hidden>No hoodies match those filters.</div>
 
   <footer>
+    <p>Photos load directly from each seller's own product page and belong to them. Each card links back to the seller. If you're a seller and want a photo or listing removed, <a id="remove" href="#">open an issue</a> and it's gone.</p>
     <p>Specs and prices were read from each maker's (or listing retailer's) product page on <span id="checked"></span> and can change. Stock isn't tracked. Prices are in each store's own currency. Links go to the seller; I don't sell anything here.</p>
     <p>Only brands that aren't primarily clothing makers are listed for now. Know a good one? <a id="suggest" href="#">Suggest a hoodie</a>.</p>
   </footer>
@@ -152,7 +166,14 @@ footer p { max-width: 760px; margin: 0 0 10px; }
     c.id = "fz-" + h.id;
     var tile = el("div", "tile");
     tile.style.background = "hsl(" + hue(h.world) + "," + "var(--tile-s)" + "," + "var(--tile-l)" + ")";
-    tile.appendChild(el("div", "zipper")); tile.appendChild(el("div", "pull"));
+    var zip = el("div", "zipper"), pull = el("div", "pull");
+    tile.appendChild(zip); tile.appendChild(pull);
+    if (h.image) {
+      var im = new Image();
+      im.alt = h.vendor + " " + h.product; im.referrerPolicy = "no-referrer";
+      im.addEventListener("load", function () { tile.classList.add("photo"); zip.remove(); pull.remove(); tile.insertBefore(im, tile.firstChild); });
+      im.src = h.image;
+    }
     tile.appendChild(el("span", "num", "FZ #" + String(h.id).padStart(3, "0")));
     tile.appendChild(el("span", "world", h.world));
     c.appendChild(tile);
@@ -223,6 +244,7 @@ footer p { max-width: 760px; margin: 0 0 10px; }
     DATA = d;
     document.getElementById("checked").textContent = d.length ? d[0].checked : "";
     document.getElementById("suggest").href = "https://github.com/jtv55/full-zip/issues/new?title=" + encodeURIComponent("Suggest a hoodie") + "&body=" + encodeURIComponent("Brand:\nProduct link:\nWhy it fits (not primarily a clothing brand, full zip):\n");
+    document.getElementById("remove").href = "https://github.com/jtv55/full-zip/issues/new?title=" + encodeURIComponent("Removal request") + "&body=" + encodeURIComponent("Brand:\nProduct:\n");
     shuffle(); buildWorlds(); render();
     toggle("specsOnly", "specs"); toggle("weightOnly", "weight"); toggle("usa", "usa");
     document.getElementById("sort").addEventListener("change", function (e) { state.sort = e.target.value; state.pick = null; render(); });
