@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full Zip</title>
+<meta name="description" content="A gallery of full-zip hoodies from brands that don't make clothes: roasters, museums, tool makers, railroads and more. Specs included.">
+<style>
+:root {
+  --bg: #f6f3ee; --panel: #ffffff; --fg: #1d1b18; --muted: #6b655c; --line: #ddd6ca; --accent: #b4441f; --chip: #ece6da;
+  --tile-l: 82%; --tile-s: 38%;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14120f; --panel: #1d1a16; --fg: #f1ece3; --muted: #a39b8d; --line: #332e27; --accent: #e8794d; --chip: #2a251f;
+    --tile-l: 24%; --tile-s: 34%;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14120f; --panel: #1d1a16; --fg: #f1ece3; --muted: #a39b8d; --line: #332e27; --accent: #e8794d; --chip: #2a251f;
+  --tile-l: 24%; --tile-s: 34%;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: inherit; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+header { padding: 40px 0 12px; }
+h1 { font: 700 clamp(44px, 9vw, 92px)/0.95 ui-serif, Georgia, "Times New Roman", serif; letter-spacing: -0.02em; margin: 0; }
+h1 span { color: var(--accent); }
+.tag { color: var(--muted); max-width: 640px; margin: 14px 0 0; font-size: 18px; }
+.bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 22px 0 8px; }
+.chip { border: 1px solid var(--line); background: var(--chip); color: var(--fg); padding: 6px 12px; border-radius: 999px; font: inherit; font-size: 14px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chip:focus-visible, button:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 8px 0 0; }
+select, .btn { border: 1px solid var(--line); background: var(--panel); color: var(--fg); padding: 8px 12px; border-radius: 8px; font: inherit; font-size: 14px; }
+.btn { cursor: pointer; }
+.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.count { color: var(--muted); font-size: 14px; margin-left: auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; padding: 18px 0 40px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+.card.pick { outline: 3px solid var(--accent); }
+.tile { height: 120px; position: relative; display: flex; align-items: flex-end; justify-content: space-between; padding: 12px 14px; }
+.num { font: 600 13px/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: 0.08em; opacity: 0.75; }
+.zipper { position: absolute; left: 50%; top: 0; bottom: 0; width: 6px; transform: translateX(-50%);
+  background: repeating-linear-gradient(to bottom, rgba(0,0,0,0.38) 0 4px, transparent 4px 8px); opacity: 0.55; }
+.pull { position: absolute; left: 50%; top: 14px; width: 14px; height: 24px; transform: translateX(-50%); border-radius: 3px 3px 7px 7px; background: rgba(0,0,0,0.55); }
+.world { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.7); color: #1d1b18; padding: 3px 8px; border-radius: 999px; position: relative; }
+.body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.vendor { color: var(--muted); font-size: 13px; }
+.name { font: 700 19px/1.25 ui-serif, Georgia, serif; margin: 0; }
+.price { font-weight: 600; }
+.price small { color: var(--muted); font-weight: 400; }
+dl { margin: 6px 0 0; display: grid; grid-template-columns: 88px 1fr; gap: 4px 10px; font-size: 14px; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+dd.na { color: var(--muted); font-style: italic; }
+.note { color: var(--muted); font-size: 13px; margin-top: 6px; }
+.meter { display: flex; gap: 3px; margin-top: 8px; align-items: center; font-size: 12px; color: var(--muted); }
+.meter i { width: 14px; height: 6px; border-radius: 2px; background: var(--line); display: inline-block; }
+.meter i.on { background: var(--accent); }
+.go { margin-top: auto; padding-top: 10px; font-weight: 600; text-decoration: none; color: var(--accent); }
+.go:hover { text-decoration: underline; }
+.src { font-size: 12px; color: var(--muted); }
+.empty { padding: 60px 0; text-align: center; color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
+footer p { max-width: 760px; margin: 0 0 10px; }
+@media (max-width: 480px) { .count { margin-left: 0; width: 100%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Full <span>Zip</span></h1>
+    <p class="tag">Full-zip hoodies from brands that don't make clothes: roasters, museums, tool makers, railroads. Every card lists the specs the maker published, and says so when they didn't.</p>
+  </header>
+
+  <div class="bar" id="worlds" role="group" aria-label="Filter by world"></div>
+  <div class="row">
+    <button class="chip" id="specsOnly" aria-pressed="false">Material listed</button>
+    <button class="chip" id="weightOnly" aria-pressed="false">Weight listed</button>
+    <button class="chip" id="usa" aria-pressed="false">Made in USA</button>
+    <label><span class="src">Sort</span>
+      <select id="sort" aria-label="Sort">
+        <option value="shuffle">Shuffle</option>
+        <option value="specs">Most specs listed</option>
+        <option value="plow">Price, low to high</option>
+        <option value="phigh">Price, high to low</option>
+        <option value="name">Name</option>
+      </select>
+    </label>
+    <button class="btn primary" id="surprise">Surprise me</button>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+
+  <main class="grid" id="grid"></main>
+  <div class="empty" id="empty" hidden>No hoodies match those filters.</div>
+
+  <footer>
+    <p>Specs and prices were read from each maker's (or listing retailer's) product page on <span id="checked"></span> and can change. Stock isn't tracked. Prices are in each store's own currency. Links go to the seller; I don't sell anything here.</p>
+    <p>Only brands that aren't primarily clothing makers are listed for now. Know a good one? <a id="suggest" href="#">Suggest a hoodie</a>.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var DATA = [], worlds = new Set(), state = { worlds: new Set(), specs: false, weight: false, usa: false, sort: "shuffle", pick: null };
+  var order = [];
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function hue(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360; return h; }
+  function money(h) {
+    if (h.price == null) return null;
+    var sym = { USD: "$", CAD: "CA$", EUR: "€", GBP: "£" }[h.currency] || (h.currency + " ");
+    return sym + (h.price % 1 ? h.price.toFixed(2) : h.price);
+  }
+  var FIELDS = [
+    ["Material", function (h) { return h.material; }],
+    ["Weight", function (h) { return h.weight_oz ? (h.weight_note || h.weight_oz + " oz") : (h.weight_note || null); }],
+    ["Fit", function (h) { return h.fit; }],
+    ["Zip", function (h) { return h.zip; }],
+    ["Hood", function (h) { return h.hood; }],
+    ["Pockets", function (h) { return h.pockets; }],
+    ["Sizes", function (h) { return h.sizes; }],
+    ["Made", function (h) { return h.made_in; }]
+  ];
+  function specCount(h) { return FIELDS.filter(function (f) { return f[1](h); }).length; }
+  function isUSA(h) { return /usa|united states/i.test(h.made_in || ""); }
+
+  function visible() {
+    return DATA.filter(function (h) {
+      if (state.worlds.size && !state.worlds.has(h.world)) return false;
+      if (state.specs && !h.material) return false;
+      if (state.weight && !(h.weight_oz || h.weight_note)) return false;
+      if (state.usa && !isUSA(h)) return false;
+      return true;
+    });
+  }
+  function sorted(list) {
+    var a = list.slice();
+    if (state.sort === "shuffle") a.sort(function (x, y) { return order.indexOf(x.id) - order.indexOf(y.id); });
+    else if (state.sort === "specs") a.sort(function (x, y) { return specCount(y) - specCount(x); });
+    else if (state.sort === "plow") a.sort(function (x, y) { return (x.price == null) - (y.price == null) || x.price - y.price; });
+    else if (state.sort === "phigh") a.sort(function (x, y) { return (x.price == null) - (y.price == null) || y.price - x.price; });
+    else a.sort(function (x, y) { return (x.vendor + x.product).localeCompare(y.vendor + y.product); });
+    return a;
+  }
+
+  function card(h) {
+    var c = el("article", "card" + (state.pick === h.id ? " pick" : ""));
+    c.id = "fz-" + h.id;
+    var tile = el("div", "tile");
+    tile.style.background = "hsl(" + hue(h.world) + "," + "var(--tile-s)" + "," + "var(--tile-l)" + ")";
+    tile.appendChild(el("div", "zipper")); tile.appendChild(el("div", "pull"));
+    tile.appendChild(el("span", "num", "FZ #" + String(h.id).padStart(3, "0")));
+    tile.appendChild(el("span", "world", h.world));
+    c.appendChild(tile);
+    var b = el("div", "body");
+    b.appendChild(el("div", "vendor", h.vendor + " · " + h.maker));
+    b.appendChild(el("h2", "name", h.product));
+    var p = el("div", "price");
+    var m = money(h);
+    p.appendChild(document.createTextNode(m || "Price: see site"));
+    if (h.price_note) { var sm = el("small", null, "  " + h.price_note); p.appendChild(sm); }
+    b.appendChild(p);
+    var dl = el("dl");
+    FIELDS.forEach(function (f) {
+      var v = f[1](h);
+      dl.appendChild(el("dt", null, f[0]));
+      dl.appendChild(el("dd", v ? null : "na", v || "not listed"));
+    });
+    b.appendChild(dl);
+    var n = specCount(h), meter = el("div", "meter");
+    for (var i = 0; i < FIELDS.length; i++) meter.appendChild(el("i", i < n ? "on" : ""));
+    meter.appendChild(el("span", null, " " + n + "/" + FIELDS.length + " specs listed"));
+    b.appendChild(meter);
+    if (h.notes) b.appendChild(el("div", "note", h.notes));
+    var a = el("a", "go", "View at " + (h.source === "retailer" ? "retailer" : "maker") + " →");
+    a.href = h.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+    b.appendChild(a);
+    c.appendChild(b);
+    return c;
+  }
+
+  function render() {
+    var list = sorted(visible()), g = document.getElementById("grid");
+    g.textContent = "";
+    list.forEach(function (h) { g.appendChild(card(h)); });
+    document.getElementById("empty").hidden = list.length > 0;
+    document.getElementById("count").textContent = list.length + " of " + DATA.length + " hoodies";
+  }
+
+  function shuffle() {
+    order = DATA.map(function (h) { return h.id; });
+    for (var i = order.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = order[i]; order[i] = order[j]; order[j] = t; }
+  }
+
+  function buildWorlds() {
+    var box = document.getElementById("worlds");
+    var counts = {};
+    DATA.forEach(function (h) { counts[h.world] = (counts[h.world] || 0) + 1; });
+    Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); }).forEach(function (w) {
+      var c = el("button", "chip", w + " " + counts[w]);
+      c.setAttribute("aria-pressed", "false");
+      c.addEventListener("click", function () {
+        if (state.worlds.has(w)) state.worlds.delete(w); else state.worlds.add(w);
+        c.setAttribute("aria-pressed", String(state.worlds.has(w)));
+        state.pick = null; render();
+      });
+      box.appendChild(c);
+    });
+  }
+
+  function toggle(id, key) {
+    var b = document.getElementById(id);
+    b.addEventListener("click", function () {
+      state[key] = !state[key]; b.setAttribute("aria-pressed", String(state[key])); state.pick = null; render();
+    });
+  }
+
+  fetch("data.json").then(function (r) { return r.json(); }).then(function (d) {
+    DATA = d;
+    document.getElementById("checked").textContent = d.length ? d[0].checked : "";
+    document.getElementById("suggest").href = "https://github.com/jtv55/full-zip/issues/new?title=" + encodeURIComponent("Suggest a hoodie") + "&body=" + encodeURIComponent("Brand:\nProduct link:\nWhy it fits (not primarily a clothing brand, full zip):\n");
+    shuffle(); buildWorlds(); render();
+    toggle("specsOnly", "specs"); toggle("weightOnly", "weight"); toggle("usa", "usa");
+    document.getElementById("sort").addEventListener("change", function (e) { state.sort = e.target.value; state.pick = null; render(); });
+    document.getElementById("surprise").addEventListener("click", function () {
+      var list = visible(); if (!list.length) return;
+      var h = list[Math.floor(Math.random() * list.length)];
+      state.pick = h.id; render();
+      var node = document.getElementById("fz-" + h.id);
+      if (node) node.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  }).catch(function () {
+    document.getElementById("empty").hidden = false;
+    document.getElementById("empty").textContent = "Couldn't load the hoodie list.";
+  });
+})();
+</script>
+</body>
+</html>
