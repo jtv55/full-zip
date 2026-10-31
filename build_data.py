@@ -173,7 +173,7 @@ for i, h in enumerate(H, 1):
                       .replace("XXXL", "3XL").replace("XXL", "2XL"))
         if h["sizes"].endswith("X"):
             h["sizes"] += "L"
-        if h["sizes"] == "S-1":
+        if h["sizes"] == "S-1" or "ADULT" in h["sizes"]:
             h["sizes"] = None
     h.pop("_handle", None); h.pop("_domain", None)
 
